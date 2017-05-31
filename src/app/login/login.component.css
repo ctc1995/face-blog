@@ -1,0 +1,14 @@
+.mat-input-container{
+    display: block;
+}
+.login-card{
+    margin: 0 10%;
+    padding: 30px 8%;
+}
+.actions{
+    text-align: center;
+}
+.login-header{
+    background-color: #3F51B5;
+    color: #fff;
+}

@@ -1,0 +1,22 @@
+<md-card class="login-card">
+  <md-card-header class="login-header">
+    <md-card-title>登录</md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <md-input-container>
+      <input mdInput placeholder="账号" [(ngModel)]="user">
+    </md-input-container>
+    <md-input-container>
+      <input type="password" mdInput placeholder="密码" [(ngModel)]="psd">
+    </md-input-container>
+    <md-input-container>
+      <input type="email" mdInput placeholder="邮箱" [(ngModel)]="email">
+    </md-input-container>
+  </md-card-content>
+  <md-card-actions class="actions">
+    <button md-raised-button (click)="login()">登录</button>
+    <button md-raised-button (click)="reg()">注册</button>
+  </md-card-actions>
+</md-card>
+{{loginInfo}}
+{{regInfo}}
