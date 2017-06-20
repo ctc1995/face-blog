@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ImageUploadModule } from 'angular2-image-upload'
 
 import { LoginRoutingModule } from './login.routing.module'
 import { LoginMaterialModule } from './loginMaterial.module'
@@ -12,7 +13,8 @@ import { LoginService } from './login.service'
     CommonModule,
     FormsModule,
     LoginRoutingModule,
-    LoginMaterialModule
+    LoginMaterialModule,
+    ImageUploadModule.forRoot(),
   ],
   declarations: [
     LoginComponent
