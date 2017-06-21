@@ -19,9 +19,10 @@ export class LoginService{
         return this.http.post(api, data)
                         .toPromise()
                         .then(res=>{
-                            sessionStorage.setItem('user',user)
+                            console.log(res);
+                            console.log(res['_body']);
                             sessionStorage.setItem('token',res['_body'])
-                            return Promise.resolve(true);
+                            return res['_body'];
                         })
                         .catch(this.handleError);
     }
@@ -37,13 +38,21 @@ export class LoginService{
                         .toPromise()
                         .then(
                             res=>{
-                                sessionStorage.setItem('user',user)
-                                return Promise.resolve(true);
+                                res.json() || {}
                             }
                         )
                         .catch(this.handleError)
     }
+    public upImage(formData){
+        let api = this.sharpService.API.postImg;
+        return this.http.post(api, formData).map(
+            files => {
+                files.json()
+            }
+        )
+    }
     private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     }
 }

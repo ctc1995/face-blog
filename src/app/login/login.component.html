@@ -12,6 +12,13 @@
     <md-input-container>
       <input type="email" mdInput placeholder="邮箱" [(ngModel)]="email">
     </md-input-container>
+    <image-upload
+      [max]="100"
+      [buttonCaption]="'选择图片'"
+      [dropBoxMessage]="'将图片拖放到这里！'"
+      (onFileUploadFinish)="imageUploaded($event)"
+    ></image-upload>
+    <button type="submit" (click)="upload()">提交</button>
   </md-card-content>
   <md-card-actions class="actions">
     <button md-raised-button (click)="login()">登录</button>

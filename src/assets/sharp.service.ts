@@ -8,5 +8,6 @@ export class SharpService {
         loginApi: this.httpHader + this.address+"post/login",
         postApi: this.httpHader + this.address+"get/post",
         regApi: this.httpHader + this.address + "post/reg",
+        postImg: this.httpHader + this.address + "post/img"
     }
 }
