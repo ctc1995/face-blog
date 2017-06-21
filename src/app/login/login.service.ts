@@ -19,8 +19,9 @@ export class LoginService{
         return this.http.post(api, data)
                         .toPromise()
                         .then(res=>{
-                            res.json() || {}
-                            sessionStorage.setItem('token',res['message'])
+                            sessionStorage.setItem('user',user)
+                            sessionStorage.setItem('token',res['_body'])
+                            return Promise.resolve(true);
                         })
                         .catch(this.handleError);
     }
@@ -36,13 +37,13 @@ export class LoginService{
                         .toPromise()
                         .then(
                             res=>{
-                                res.json() || {}
+                                sessionStorage.setItem('user',user)
+                                return Promise.resolve(true);
                             }
                         )
                         .catch(this.handleError)
     }
     private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     }
 }
